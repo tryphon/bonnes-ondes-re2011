@@ -8,48 +8,54 @@
   </head>
 
   <body class="show">
-    <h1>{{show.name}}</h1>
-    
-    <div class="description">
-      {{show.logo.tag}}
-      {{show.description | textilize}}
-    </div>
-  
-    <h2>Tous les épisodes</h2>
+    <div id="container">
+      <h1>Esperanzah!</h1>
 
-    <ul class="episodes">
-      {% for episode in show.episodes %}
-      <li>
-        <a href="{{episode.url_for}}">
-          <img class="podcast" src="{{theme.url_for_assets}}/images/ecouter-small.png"/>
-        </a>
-
-        <a href="{{episode.url_for}}">{{episode.title}}</a><br/>
-        {% if episode.broadcasted_at %}
-        <span class="broadcast_date">diffusé {{episode.broadcasted_at | date: 'le %d/%m/%Y à %Hh%M'}}</a>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-    
-    <p>
-      Pour suivre tous nos programmes, il suffit de vous abonner au podcast de {{show.name}} :
-    </p>
+      <div id="panel">
+        <div id="breadcrumbs">
+          <span class="root">Où suis-je ?</span> Radio Esperanzah!
+        </div>
+        <div id="menu">
+          <ul>
+            <li class="current"><a href="{{show.url_for}}">Accueil</a></li>
+            <li><a href="#podcast">Podcast</a></li>
+          </ul>
+        </div>
+        <div id="content">
+          <p>
+            Facilisis cum? Sociis, facilisis, parturient magna dis ultricies lectus facilisis nec odio? In in nunc? Scelerisque? Hac, magnis. Augue adipiscing! Lundium sed mauris mus nec, adipiscing lundium tincidunt elit, lacus, mattis cum, purus augue nec porttitor elit aliquam platea penatibus, porta lectus enim tincidunt mid porta! Augue rhoncus, penatibus natoque velit turpis nec purus proin ridiculus mauris nascetur! Aliquet amet rhoncus elementum ac lectus aliquam! Magna! Et elementum sagittis turpis! Mid integer, tincidunt risus nisi non ut vut, natoque vel turpis integer in lorem, phasellus ac odio? Pulvinar risus! Platea? Ac! Pulvinar in tortor penatibus ridiculus, integer pulvinar integer, tincidunt? Elementum ut. Egestas a dolor, a aliquam pellentesque! Ut? In, sed? Ac! Phasellus integer a elementum ultrices penatibus eros turpis.
+          </p>
+          <p>
+            Nunc rhoncus, tincidunt augue facilisis amet ut! Purus a et dapibus. Augue ac pulvinar, montes, urna ut ut arcu montes! Natoque diam porttitor, habitasse ultrices sit amet vel amet tortor cursus porta sagittis aenean, porta integer dapibus urna in? Amet eu natoque ac! Ac integer amet quis pulvinar vel, sociis? Pulvinar adipiscing mauris elementum! Pellentesque. Etiam augue cum, augue, turpis augue platea aenean lundium nunc phasellus sociis dignissim mid. Cum odio massa auctor rhoncus, risus magnis adipiscing duis dapibus. Diam non porta? Lorem? Habitasse ultrices habitasse in, tincidunt parturient eu mid scelerisque, ut, diam sed. Cursus et dignissim penatibus dictumst odio, rhoncus et et eu lorem et placerat a, sed porta et porttitor? Turpis? Nunc tincidunt quis tincidunt hac.
+          </p>
+        </div>
+      </div>
+      <div id="footer">
+        <div id="podcast">
+          <a href="{{show.url_for_podcast}}">
+            <img class="podcast" src="{{theme.url_for_assets}}/images/podcast.png"/>
+          </a>
+          <p class="first">
+            Adresse du podcast : <input class="podcast" size="{{show.url_for_podcast | size}}" value="http://radio.esperanzah.be/feed" type="text" readonly="true"/> {{show.clippy_for_podcast}}
+          </p>
         
-    <div class="podcast">
-      <a href="{{show.url_for_podcast}}">
-        <img src="{{theme.url_for_assets}}/images/podcast.png"/>
-      </a>
-      
-      <p>
-        Adresse du podcast : <input class="podcast" size="{{show.url_for_podcast | size}}" value="{{show.url_for_podcast}}" type="text" readonly="true"/> {{show.clippy_for_podcast}}
-      </p>
-      
-      <p>
-        <a href="{{show.itpc_url_for_podcast}}" title="Ajouter ce podcast dans votre iTunes">iTunes</a> 
-        | <a href="{{show.url_for_podcast}}" title="Voir le feed RSS">RSS</a> 
-        | <a href="http://wiki.tryphon.org/comment_lire_un_podcast" title="Comment lire un podcast ?">Aide</a>
-      </p>
+          <p>
+            <a href="{{show.itpc_url_for_podcast}}" title="Ajouter ce podcast dans votre iTunes">iTunes</a> | <a href="{{show.url_for_podcast}}" title="Voir le feed RSS">RSS</a> | <a href="http://wiki.tryphon.org/comment_lire_un_podcast" title="Comment lire un podcast ?">Aide</a>
+          </p>
+        </div>
+
+        <div id="twitter">
+          <a href="http://twitter.com/radioesperanzah">
+            <img src="{{theme.url_for_assets}}/images/twitter.png"/>
+          </a>
+        </div>
+
+        <div id="facebook">
+          <a href="http://www.facebook.com/RadioEsperanzah">
+            <img src="{{theme.url_for_assets}}/images/facebook.png"/>
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

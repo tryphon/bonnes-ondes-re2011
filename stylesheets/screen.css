@@ -1,1 +1,144 @@
 @import 'reset.css';
+
+body {
+    background: #2C3062 url(../images/background.jpg) center top no-repeat;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333;
+    padding-bottom: 30px;
+}
+
+#container {
+    width: 955px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-indent: -999px;
+    background: transparent url(../images/banner.png) top left;
+    width: 955px;
+    height: 211px;
+    display: block;
+}
+
+#panel {
+    -moz-border-top-left-radius: 12px;
+    -webkit-border-top-left-radius: 12px;
+    -moz-border-top-right-radius: 12px;
+    -webkit-border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #F3EBE0;
+}
+
+#breadcrumbs {
+    padding: 10px 20px 15px 20px;
+    font-size: 0.8em;
+
+    background: transparent url(../images/feuille.png) top left no-repeat;
+}
+
+#breadcrumbs .root {
+    color: #D2611E;
+}
+
+#menu {
+    height: 34px;
+    background-color: #333333;
+    position: relative;
+    padding: 0px 20px;
+
+    -moz-box-shadow: 0 -2px 2px #666;
+    -webkit-box-shadow: 0 -2px 2px #666;
+    box-shadow: 0 -2px 2px #666;
+
+    margin: 0 -8px;
+}
+
+#menu ul {
+    position: absolute;
+    bottom: 7px;
+}
+
+#menu ul li {
+    display: inline;
+    padding: 10px 10px 8px 10px;
+}
+
+#menu ul li a {
+    color: #f8b707;
+    font-family: Serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#menu ul li.current {
+    background-color: #e85603;
+    padding-top: 14px;
+    -moz-border-top-left-radius: 6px;
+    -webkit-border-top-left-radius: 6px;
+    -moz-border-top-right-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+    -moz-box-shadow: 0 -2px 2px #666;
+    -webkit-box-shadow: 0 -2px 2px #666;
+    box-shadow: 0 -2px 2px #666;
+}
+
+#menu ul li.current a {
+    color: #fff;
+}
+
+#content {
+    padding: 20px 20px;
+    border-top: 5px solid #e85603;
+}
+
+#content p {
+    padding-bottom: 1em;
+}
+
+#footer {
+    background-color: #fff;
+    min-height: 75px; 
+    -moz-border-bottom-left-radius: 12px;
+    -webkit-border-bottom-left-radius: 12px;
+    -moz-border-bottom-right-radius: 12px;
+    -webkit-border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    padding: 20px 20px;
+
+    -moz-box-shadow: 0 -2px 2px #F3EBE0;
+    -webkit-box-shadow: 0 -2px 2px #666;
+    box-shadow: 0 -3px 5px 0 #AAA;
+}
+
+#footer div {
+    float: left;
+    margin: 0 18px;
+}
+
+#podcast {
+    width: 630px;
+}
+
+#podcast img {
+    float: left;
+    margin-right: 20px;
+}
+
+#podcast p.first {
+    margin-top: 12px;
+}
+
+#podcast input {
+    width: 250px;
+    display: inline;
+    background-color: white;
+    border: 1px solid #777;
+    padding: 2px;
+}
