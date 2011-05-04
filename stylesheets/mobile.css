@@ -1,0 +1,30 @@
+h1 {
+    background-image: url(../images/banner-small.png);
+    width: 320px;
+    height: 141px;
+}
+
+body {
+    font-size: 12px;
+    background-image: url(../images/background-small.jpg);
+}
+
+#container {
+    width: 320px;
+}
+
+#footer {
+    padding-left: 30px;
+}
+
+#footer div {
+    margin: 0 6px;
+}
+
+#podcast {
+    width: 70px;
+}
+
+#podcast p {
+    display: none;
+}
