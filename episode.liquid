@@ -1,13 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
-    <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="{{theme.url_for_assets}}/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
-    <link rel="alternate" type="application/rss+xml" title="Podcast de {{show.name}}" href="{{show.url_for_podcast}}"/>
+    <title>{{episode.title}} - {{show.name}} - Bonnes Ondes</title>
+
+    <script src="/javascripts/animator.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/360-player/360player.css"/>
+    <link rel="stylesheet" type="text/css" href="/360-player/360player-visualization.css"/>
+
+    <script src="/javascripts/soundmanager2.js"></script>
+    <script src="/javascripts/360player.js"></script>
+    <script>
+      soundManager.url = "/flash/";
+
+      soundManager.useFastPolling = true; // increased JS callback frequency, combined with useHighPerformance = true
+
+      threeSixtyPlayer.config.loadRingColor = "#F3EBE0";
+
+      threeSixtyPlayer.config.scaleFont = (navigator.userAgent.match(/msie/i)?false:true);
+      threeSixtyPlayer.config.showHMSTime = true;
+
+      // enable some spectrum stuffs
+
+      threeSixtyPlayer.config.useWaveformData = true;
+      threeSixtyPlayer.config.useEQData = true;
+
+      // enable this in SM2 as well, as needed
+
+      if (threeSixtyPlayer.config.useWaveformData) {
+      soundManager.flash9Options.useWaveformData = true;
+      }
+      if (threeSixtyPlayer.config.useEQData) {
+      soundManager.flash9Options.useEQData = true;
+      }
+      if (threeSixtyPlayer.config.usePeakData) {
+      soundManager.flash9Options.usePeakData = true;
+      }
+      soundManager.debugMode = true;
+    </script>
+
+    {% include 're2011/head' %}
   </head>
 
   <body class="show">
-  
+    <div id="container">
+      {% include 're2011/header' %}
+      <div id="panel">
+        <div id="breadcrumbs">
+          {% include 're2011/breadcrumbs' %} > {{ episode.title }}
+        </div>
+        {% include 're2011/menu' %}
+        <div id="content">
+          <h2>{{ episode.title }}</h2>
+          {{ episode.description | textilize }}
+        </div>
+        <div id="sidebar">
+          {% include 're2011/episode_principal_contents' %}
+        </div>
+      </div>
+      {% include 're2011/footer' %}
+    </div>
   </body>
 </html>

@@ -1,0 +1,33 @@
+<div id="principal_contents" class="block">
+{% unless episode.principal_contents == empty %}
+  {% for content in episode.principal_contents %}
+    <div class="audio" id="principal_content_{{forloop.index}}">
+      <div class="ui360 ui360-vis">
+        <a href="{{ content.url_for_mp3 }}">{{content.name}}</a>
+      </div>
+
+      <div class="details">
+        <a href="{{ content.url_for_playlist }}">
+        {% if episode.contents.size == 1 or content.name == "Intégrale" %}
+          {{episode.title}}
+        {% else %}
+          {{content.name}}
+        {% endif %}
+        </a>
+        <br/>
+        {% if content.duration %}
+        <span class="duration">Durée: {{content.duration}} minutes</span>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% else %}
+  {% if episode.broadcasted_at > now %}
+    Ecoutez en direct cette émission<br/>{{episode.broadcasted_at | prettydate }}
+  {% else %}
+    {% unless episode.tags contains 'live' %}
+      Retrouvez prochainement<br/>le contenu de ce programme
+    {% endunless %}
+  {% endif %}       
+{% endunless %}
+</div>

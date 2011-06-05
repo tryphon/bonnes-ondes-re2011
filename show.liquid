@@ -1,62 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
     <title>{{show.name}} - Bonnes Ondes</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="{{theme.url_for_assets}}/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
-    <link rel="alternate" type="application/rss+xml" title="Podcast de {{show.name}}" href="{{show.url_for_podcast}}"/>
-
-    <link rel="stylesheet" type="text/css" href="{{theme.url_for_assets}}/stylesheets/mobile.css" media="only screen and (max-device-width: 640px)" />
-    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    {% include 're2011/head' %}
   </head>
 
   <body class="show">
     <div id="container">
-      <h1 onclick="location.href = 'http://www.esperanzah.be'; return false;">Esperanzah!</h1>
-
+      {% include 're2011/header' %}
       <div id="panel">
         <div id="breadcrumbs">
-          <span class="root">Où suis-je ?</span> Radio Esperanzah!
+          {% include 're2011/breadcrumbs' %}
         </div>
-        <div id="menu">
-          <ul>
-            <li class="current"><a href="{{show.url_for}}">Accueil</a></li>
-            <li><a href="#podcast">Podcast</a></li>
-          </ul>
-        </div>
+        {% include 're2011/menu' %}
         <div id="content">
-          {% for post in show.posts limit:1 %}
-          <h2>{{ post.title }}</h2>
-          {{ post.description | textilize }}
-          {% endfor %}
+          <div class="post">
+            {% for post in show.posts limit:1 %}
+            <h2>{{ post.title }}</h2>
+            {{ post.description | textilize }}
+            {% endfor %}
+          </div>
+        </div>
+        <div id="sidebar">
+          <div class="block twitter">
+            <h3>Sur Twitter <a href="http://twitter.com/radioesperanzah">@radioesperanzah</a></h3>
+          </div>
         </div>
       </div>
-      <div id="footer">
-        <div id="podcast">
-          <a href="{{show.url_for_podcast}}" onclick="if (navigator.userAgent.match(/android/i)) { return true; } ; location.href = '{{show.itpc_url_for_podcast}}'; return false;">
-            <img class="podcast" src="{{theme.url_for_assets}}/images/podcast.png"/>
-          </a>
-          <p class="first">
-            Adresse du podcast : <input class="podcast" size="{{show.url_for_podcast | size}}" value="{{show.url_for_podcast}}" type="text" readonly="true"/> {{show.clippy_for_podcast}}
-          </p>
-        
-          <p>
-            <a href="{{show.itpc_url_for_podcast}}" title="Ajouter ce podcast dans votre iTunes">iTunes</a> | <a href="{{show.url_for_podcast}}" title="Voir le feed RSS">RSS</a> | <a href="http://wiki.tryphon.org/comment_lire_un_podcast" title="Comment lire un podcast ?">Aide</a>
-          </p>
-        </div>
-
-        <div id="twitter">
-          <a href="http://twitter.com/radioesperanzah">
-            <img src="{{theme.url_for_assets}}/images/twitter.png"/>
-          </a>
-        </div>
-
-        <div id="facebook">
-          <a href="http://www.facebook.com/RadioEsperanzah">
-            <img src="{{theme.url_for_assets}}/images/facebook.png"/>
-          </a>
-        </div>
-      </div>
+      {% include 're2011/footer' %}
     </div>
   </body>
 </html>

@@ -1,13 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
-    <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="{{theme.url_for_assets}}/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
-    <link rel="alternate" type="application/rss+xml" title="Podcast de {{show.name}}" href="{{show.url_for_podcast}}"/>
+    <title>{{search | capitalize}} - {{show.name}} - Bonnes Ondes</title>
+    {% include 're2011/head' %}
   </head>
 
   <body class="show">
-  
+    <div id="container">
+      {% include 're2011/header' %}
+      <div id="panel">
+        <div id="breadcrumbs">
+          {% include 're2011/breadcrumbs' %} > {{search | capitalize}}
+        </div>
+        {% include 're2011/menu' %}
+        <div id="content">
+          <h2>{{search | capitalize}}</h2>
+
+          {% if search == "archives" %}
+          <p>
+          Chaque semaine, Radio Esperanzah déballe des cartons ses archives sonores… 10 ans de festival, 7 ans de radio éphémère, petite mémoire du festival.
+          </p>
+          <p>
+          Tous les lundis, nous vous proposons de revivre des beaux moments de radios en 10 sons.
+          </p>
+          {% else %}
+          <p>
+            Voici tous les émissions correspondants à votre recherche :
+          </p>
+          {% endif %}
+
+          {% for episode in show.episodes %}
+          <h3>{{ episode.title }}</h3>
+
+          <p>
+          {{ episode.description | textilize | strip_tags | truncate: 400 }}
+          </p>
+
+          <a href="{{episode.url_for}}" rel="bookmark" title="{{episode.title}}">
+            &#8594; lire et écouter la suite &#8250;
+          </a>
+
+          {% endfor %}
+        </div>
+        <div id="sidebar">
+          <div class="block tags">
+            <h3>Tous les mots-clés</h3>
+            <p>
+            {% for tag in show.tags limit:15 %}
+            <a href="{{ tag.url_for }}">{{tag.name | capitalize}}</a> -
+            {% endfor %}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% include 're2011/footer' %}
+    </div>
   </body>
 </html>
