@@ -1,6 +1,6 @@
 Event.observe(window, "load", function() {
   $$('a').select(function(link) {
-    return link.href.match(/bonnes-ondes/);
+    return link.href.match(/radio.esperanzah/);
   }).each(function(link) {
     link.addClassName("internal");
   });
