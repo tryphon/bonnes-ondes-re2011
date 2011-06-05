@@ -136,6 +136,32 @@ h1 {
     color: #D2611E;
 }
 
+#content #headline .episode {
+    position: relative;
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+}
+
+#content #headline .episode span.text {
+    position: absolute;
+    bottom: 7px;
+    right: 5px;
+    color: #f8b707;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    text-shadow: #666 1px 1px;
+}
+
+#content #headline {
+    margin-bottom: 15px;
+}
+
+#content #headline:after { 
+    content: "";  display: block; height: 0; clear: both; visibility: hidden; 
+}
+
 #sidebar {
     width: 230px; 
     padding: 20px 0;
@@ -144,7 +170,7 @@ h1 {
 
 .ui360-vis, .ui360-vis .sm2-360ui {
     margin-top: -10px;
-    margin-bottom: 15px;
+    margin-bottom: -30px;
     width: 200px;
     height: 200px;
 }
@@ -189,6 +215,8 @@ h1 {
 
 #principal_contents .audio .details {
     text-align: center;
+    z-index: 10;
+    position: relative;
 }
 
 #principal_contents .audio .details a {

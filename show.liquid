@@ -14,6 +14,18 @@
         </div>
         {% include 're2011/menu' %}
         <div id="content">
+          <div id="headline">
+            <h2>A la une</h2>
+              {% for episode in show.tag.a_la_une limit:3 %}
+              <div class="episode">
+                <a href="{{ episode.url_for }}" title="{{ episode.title }}">
+                  {{ episode.image.tag }}
+                  <span class="text">{{ episode.title }}</span>
+                </a>
+              </div>
+              {% endfor %}
+          </div>
+
           <div class="post">
             {% for post in show.posts limit:1 %}
             <h2>{{ post.title }}</h2>
