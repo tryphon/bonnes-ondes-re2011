@@ -24,7 +24,7 @@ Event.observe(window, "load", function() {
     var twitter_search_script = document.createElement('script');
 	  twitter_search_script.setAttribute("type","text/javascript");
 
-	  twitter_search_script.setAttribute("src", "http://twitter.com/statuses/user_timeline/radioesperanzah.json?callback=display_tweets&count=10");
+	  twitter_search_script.setAttribute("src", "http://twitter.com/statuses/user_timeline/radioesperanzah.json?callback=display_tweets&count=7");
 
 	  $$("body").first().insert({ "after": twitter_search_script });
   }

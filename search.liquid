@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>{{search | capitalize}} - {{show.name}} - Bonnes Ondes</title>
+    <title>{{search | replace:'_',' ' | capitalize}} - {{show.name}} - Bonnes Ondes</title>
     {% include 're2011/head' %}
   </head>
 
@@ -10,11 +10,11 @@
       {% include 're2011/header' %}
       <div id="panel">
         <div id="breadcrumbs">
-          {% include 're2011/breadcrumbs' %} > {{search | capitalize}}
+          {% include 're2011/breadcrumbs' %} > {{search | replace:'_',' ' | capitalize}}
         </div>
         {% include 're2011/menu' %}
         <div id="content">
-          <h2>{{search | capitalize}}</h2>
+          <h2>{{search | replace:'_',' ' | capitalize}}</h2>
 
           {% if search == "archives" %}
           <p>
@@ -29,7 +29,7 @@
           </p>
           {% endif %}
 
-          {% for episode in show.episodes %}
+          {% for episode in episodes %}
           <h3>{{ episode.title }}</h3>
 
           <p>
@@ -47,7 +47,11 @@
             <h3>Tous les mots-clés</h3>
             <p>
             {% for tag in show.tags limit:15 %}
-            <a href="{{ tag.url_for }}">{{tag.name | capitalize}}</a> -
+              {% capture tag_name %}{{tag.name | replace:'_',' ' | capitalize}}{% endcapture %}
+              <a href="/tags/{{ tag.name }}" title="{{tag_name}}, toutes les émissions">{{tag_name}}</a>
+              {% unless forloop.last %}
+              -
+              {% endunless %}
             {% endfor %}
             </p>
           </div>

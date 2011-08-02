@@ -1,3 +1,36 @@
+<div id="programme">
+  <ul class="day">
+  <h3>Jeudi 4 août</h3>
+   {% for episode in show.tag.jeudi reversed %}
+    <li><span>{{ episode.broadcasted_at|date:'%H:%M' }}</span><a href="{{ episode.url_for }}">{{ episode.title | truncate: 30 }}</a></li> 
+   {% endfor %}
+  </ul>
+  <ul class="day">
+  <h3>Vendredi 5 août</h3>
+   {% for episode in show.tag.vendredi reversed %}
+    <li><span>{{ episode.broadcasted_at|date:'%H:%M' }}</span><a href="{{ episode.url_for }}">{{ episode.title | truncate: 30 }}</a></li> 
+   {% endfor %}
+  </ul>
+  <ul class="day">
+  <h3>Samedi 6 août</h3>
+   {% for episode in show.tag.samedi reversed %}
+    <li><span>{{ episode.broadcasted_at|date:'%H:%M' }}</span><a href="{{ episode.url_for }}">{{ episode.title | truncate: 30 }}</a></li> 
+   {% endfor %}
+  </ul>
+  <ul class="day">
+  <h3>Dimanche 7 août</h3>
+   {% for episode in show.tag.dimanche reversed %}
+    <li><span>{{ episode.broadcasted_at|date:'%H:%M' }}</span><a href="{{ episode.url_for }}">{{ episode.title | truncate: 30 }}</a></li> 
+   {% endfor %}
+  </ul>
+  <ul class="day">
+  <h3>Reportages</h3>
+   {% for episode in show.tag.reportage reversed %}
+    <li><a href="{{ episode.url_for }}">{{ episode.title | truncate: 30 }}</a></li> 
+   {% endfor %}
+  </ul>
+</div>   
+
 <div id="footer">
   <div id="podcast">
     <a href="{{show.url_for_podcast}}" onclick="if (navigator.userAgent.match(/android/i)) { return true; } ; location.href = '{{show.itpc_url_for_podcast}}'; return false;">
@@ -8,18 +41,18 @@
     </p>
     
     <p>
-      <a href="{{show.itpc_url_for_podcast}}" title="Ajouter ce podcast dans votre iTunes">iTunes</a> | <a href="{{show.url_for_podcast}}" title="Voir le feed RSS">RSS</a> | <a href="http://wiki.tryphon.org/comment_lire_un_podcast" title="Comment lire un podcast ?">Aide</a>
+      <a href="http://subscribe.getmiro.com/?url1={{show.url_for_podcast}}&trackback1={{show.url_for}}&section1=audio" title="Ajouter ce podcast dans votre Miro">Miro</a> | <a href="{{show.itpc_url_for_podcast}}" title="Ajouter ce podcast dans votre iTunes">iTunes</a> | <a href="{{show.url_for_podcast}}" title="Voir le feed RSS">RSS</a> | <a href="http://wiki.tryphon.org/comment_lire_un_podcast" title="Comment lire un podcast ?">Aide</a>
     </p>
   </div>
 
   <div id="twitter">
-    <a href="http://twitter.com/radioesperanzah">
+    <a href="http://twitter.com/radioesperanzah" title="@radioesperanzah sur Twitter">
       <img src="{{theme.url_for_assets}}/images/twitter.png"/>
     </a>
   </div>
 
   <div id="facebook">
-    <a href="http://www.facebook.com/RadioEsperanzah">
+    <a href="http://www.facebook.com/RadioEsperanzah" title="Radio Esperanzah! sur FaceBook">
       <img src="{{theme.url_for_assets}}/images/facebook.png"/>
     </a>
   </div>

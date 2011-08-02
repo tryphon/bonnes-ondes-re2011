@@ -1,8 +1,11 @@
 @import 'reset.css';
 
+html {
+    background: #2C3062 url(../images/background.jpg) center top no-repeat;
+}
+
 body {
     height: 100%;
-    background: #2C3062 url(../images/background.jpg) center top no-repeat;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #333;
@@ -130,6 +133,12 @@ h1 {
     width: 650px;
 }
 
+#content img {
+    float: right;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
 #content a[rel=bookmark] {
     margin-top: -10px;
     display: block;
@@ -200,8 +209,16 @@ h1 {
     margin: 5px 0;
 }
 
-#sidebar .block li {
+#sidebar .block.twitter li {
+    list-style: none;
     margin: 5px 0;
+}
+
+#sidebar .block li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    list-style: circle;
 }
 
 #sidebar .block.tags p {
@@ -269,4 +286,32 @@ h1 {
     background-color: white;
     border: 1px solid #777;
     padding: 2px;
+}
+
+#programme {
+    background: #CCC;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+#programme .day {
+    float: left;
+    margin: 7px;
+    width: 170px;
+}
+
+#programme .day h3 {
+    margin-bottom: 5px;
+}
+
+#programme .day li {
+    font-size: 0.8em;
+}
+
+#programme .day li span {
+    margin-right: 5px;
+}
+
+#programme:after { 
+    content: "";  display: block; height: 0; clear: both; visibility: hidden; 
 }

@@ -52,6 +52,7 @@
         {% include 're2011/menu' %}
         <div id="content">
           <h2>{{ episode.title }}</h2>
+          {{ episode.image.tag }}
           {{ episode.description | textilize }}
         </div>
         <div id="sidebar">
