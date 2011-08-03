@@ -15,7 +15,7 @@
         {% include 're2011/menu' %}
         <div id="content">
           <div id="headline">
-            <h2>A la une</h2>
+            <h2>À la une</h2>
               {% for episode in show.tag.a_la_une limit:3 %}
               <div class="episode">
                 <a href="{{ episode.url_for }}" title="{{ episode.title }}">

@@ -91,6 +91,17 @@ h1 {
     box-shadow: 0 -2px 2px #666;
 }
 
+#menu ul li.listen {
+    background: transparent url(../images/listen.png) 0% 46% no-repeat;
+    padding-left: 18px;
+    margin-left: 18px;
+    margin-right: -9px;
+}
+
+#menu ul li.listen a {
+    color: white;
+}
+
 #menu-underline {
     background: #e85603;
     height: 5px;
@@ -314,4 +325,29 @@ h1 {
 
 #programme:after { 
     content: "";  display: block; height: 0; clear: both; visibility: hidden; 
+}
+
+html.popup h1 {
+    background-image: url(../images/banner-small.png);
+    width: 320px;
+    height: 141px;
+    margin: 0 auto;
+}
+
+html.popup body {
+    text-align: center;
+}
+
+#player {
+    background-color: #fff;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+
+    padding: 20px 20px;
+    margin-top: 20px;
+
+    /* -moz-box-shadow: 0 -2px 2px #F3EBE0; */
+    /* -webkit-box-shadow: 0 -2px 2px #666; */
+    /* box-shadow: 0 -3px 5px 0 #AAA; */
 }
