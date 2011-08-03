@@ -62,13 +62,11 @@
             {% endif %}
 
             {% capture tag_name %}{{tag | replace:'_',' '}}{% endcapture %}
-            <a href="/tags/{{ tag }}" title="{{tag_name}}, toutes les émissions">{{tag_name}}</a>
+            <a href="/tags/{{ tag }}" title="{{tag_name}}, toutes les émissions">{{tag_name}}</a>{% unless forloop.last %},{% endunless %}
 
-            {% unless forloop.last %}
-            ,
-            {% else %}
+            {% if forloop.last %}
             </div>
-            {% endunless %}
+            {% endif %}
           {% endfor %}
         </div>
         <div id="sidebar">
