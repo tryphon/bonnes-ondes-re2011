@@ -54,6 +54,22 @@
           <h2>{{ episode.title }}</h2>
           {{ episode.image.tag }}
           {{ episode.description | textilize }}
+
+          {% for tag in episode.tags %}
+            {% if forloop.first %}
+            <div class="keywords":>
+            <strong>Mots-clés: </strong>
+            {% endif %}
+
+            {% capture tag_name %}{{tag | replace:'_',' '}}{% endcapture %}
+            <a href="/tags/{{ tag }}" title="{{tag_name}}, toutes les émissions">{{tag_name}}</a>
+
+            {% unless forloop.last %}
+            ,
+            {% else %}
+            </div>
+            {% endunless %}
+          {% endfor %}
         </div>
         <div id="sidebar">
           {% include 're2011/episode_principal_contents' %}
