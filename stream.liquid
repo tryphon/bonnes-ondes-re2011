@@ -4,11 +4,30 @@
   <title>En direct - {{show.name}}</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="stylesheet" type="text/css" href="{{theme.url_for_assets}}/stylesheets/screen.css" media="screen">
+
+    <script src="/javascripts/soundmanager2.js"></script>
+    <script>
+      soundManager.url = "/flash/";
+      soundManager.debugMode = false;
+
+      soundManager.onready(function() {
+        var sound = soundManager.createSound({
+          id: 'live',
+          url: 'http://stream.tryphon.eu:8000/live.mp3',
+          autoPlay: true,
+          autoLoad: true,
+          stream: true
+        });
+      });
+    </script>
  </head>
  <body>
    <h1>Radio Esperanzah! en direct</h1>
    <div id="player">
-     <embed flashvars="file=http://stream.tryphon.eu/live.mp3&autostart=true" height="20" pluginspage="http://www.macromedia.com/go/getflashplayer" src="/flash/mediaplayer.swf" type="application/x-shockwave-flash" width="385" />
+     <p class="listen">
+       <img src="/360-player/360-button-vis-play.png" onclick="window.close();"/>
+       Vous écoutez Radio Esperanzah!
+     </p>
      <p class="broadcast">
        Ecoutez avec votre lecteur audio préféré<br/>
        <a href="http://stream.tryphon.eu/live.ogg.m3u">au format ogg</a> ou <a href="http://stream.tryphon.eu/live.mp3.m3u">au format mp3</a>

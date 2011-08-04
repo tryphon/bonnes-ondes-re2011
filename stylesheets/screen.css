@@ -350,8 +350,14 @@ html.popup body {
 
     padding: 20px 20px;
     margin-top: 20px;
+}
 
-    /* -moz-box-shadow: 0 -2px 2px #F3EBE0; */
-    /* -webkit-box-shadow: 0 -2px 2px #666; */
-    /* box-shadow: 0 -3px 5px 0 #AAA; */
+#player .listen {
+    color: #D2611E;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#player .listen img {
+    float: left;
 }
