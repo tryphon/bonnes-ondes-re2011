@@ -53,7 +53,7 @@
         <div id="content">
           <h2>{{ episode.title }}</h2>
           {{ episode.image.tag }}
-          {{ episode.description | textilize }}
+          {{ episode.html_description }}
 
           {% for tag in episode.tags %}
             {% if forloop.first %}

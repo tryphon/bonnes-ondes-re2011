@@ -327,6 +327,10 @@ h1 {
     content: "";  display: block; height: 0; clear: both; visibility: hidden; 
 }
 
+#content .ui360 {
+    margin-bottom: 15px;
+}
+
 html.popup h1 {
     background-image: url(../images/banner-small.png);
     width: 320px;
