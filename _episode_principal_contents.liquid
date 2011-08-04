@@ -27,6 +27,8 @@
   {% else %}
     {% unless episode.tags contains 'live' %}
       Retrouvez prochainement<br/>le contenu de ce programme
+    {% else %}
+      Retrouvez <a href="/tags/live">les concerts en direct</a>
     {% endunless %}
   {% endif %}       
 {% endunless %}
