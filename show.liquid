@@ -26,6 +26,30 @@
               {% endfor %}
           </div>
 
+          <h2>A venir</h2>
+
+          {% for next_episode in show.not_broadcasted_episodes limit:1 %}
+          <h3>{{ next_episode.title }}</h3>
+          <p>
+          {{ next_episode.description | textilize | strip_tags | truncate: 400 }}
+          </p>
+          <a href="{{next_episode.url_for}}" rel="bookmark" title="{{next_episode.title}}">
+            &#8594; lire et écouter la suite &#8250;
+          </a>
+          {% endfor %}
+
+          <h2>Retrouvez sur le site</h2>
+
+          {% for episode in show.broadcasted_episodes limit:3 %}
+          <h3>{{ episode.title }}</h3>
+          <p>
+          {{ episode.description | textilize | strip_tags | truncate: 400 }}
+          </p>
+          <a href="{{episode.url_for}}" rel="bookmark" title="{{episode.title}}">
+            &#8594; lire et écouter la suite &#8250;
+          </a>
+          {% endfor %}
+
           <div class="post">
             {% for post in show.posts limit:1 %}
             <h2>{{ post.title }}</h2>

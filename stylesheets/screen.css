@@ -124,6 +124,11 @@ h1 {
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+#content #headline h2 {
+    margin-top: 0;
 }
 
 #content h3 {
