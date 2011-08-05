@@ -28,7 +28,7 @@
 
           <h2>A venir</h2>
 
-          {% for next_episode in show.not_broadcasted_episodes limit:1 %}
+          {% for next_episode in show.not_broadcasted_episodes limit:1 reversed %}
           <h3>          
             <span>{{ next_episode.broadcasted_at|date:'%Hh%M' }}</span> -
             {{ next_episode.title }}
