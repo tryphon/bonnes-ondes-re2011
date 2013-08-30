@@ -39,17 +39,17 @@
       soundManager.debugMode = true;
     </script>
 
-    {% include 're2011/head' %}
+    {% include 'head' %}
   </head>
 
   <body class="show">
     <div id="container">
-      {% include 're2011/header' %}
+      {% include 'header' %}
       <div id="panel">
         <div id="breadcrumbs">
-          {% include 're2011/breadcrumbs' %} > {{ episode.title }}
+          {% include 'breadcrumbs' %} > {{ episode.title }}
         </div>
-        {% include 're2011/menu' %}
+        {% include 'menu' %}
         <div id="content">
           <h2>{{ episode.title }}</h2>
           {{ episode.image.tag }}
@@ -70,10 +70,10 @@
           {% endfor %}
         </div>
         <div id="sidebar">
-          {% include 're2011/episode_principal_contents' %}
+          {% include 'episode_principal_contents' %}
         </div>
       </div>
-      {% include 're2011/footer' %}
+      {% include 'footer' %}
     </div>
   </body>
 </html>

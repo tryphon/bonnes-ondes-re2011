@@ -2,17 +2,17 @@
 <html lang="fr">
   <head>
     <title>{{search | replace:'_',' ' | capitalize}} - {{show.name}} - Bonnes Ondes</title>
-    {% include 're2011/head' %}
+    {% include 'head' %}
   </head>
 
   <body class="show">
     <div id="container">
-      {% include 're2011/header' %}
+      {% include 'header' %}
       <div id="panel">
         <div id="breadcrumbs">
-          {% include 're2011/breadcrumbs' %} > {{search | replace:'_',' ' | capitalize}}
+          {% include 'breadcrumbs' %} > {{search | replace:'_',' ' | capitalize}}
         </div>
-        {% include 're2011/menu' %}
+        {% include 'menu' %}
         <div id="content">
           <h2>{{search | replace:'_',' ' | capitalize}}</h2>
 
@@ -57,7 +57,7 @@
           </div>
         </div>
       </div>
-      {% include 're2011/footer' %}
+      {% include 'footer' %}
     </div>
   </body>
 </html>
